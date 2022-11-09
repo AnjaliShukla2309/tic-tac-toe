@@ -1,1 +1,65 @@
+body{
+ background-image: url("bg.jpg");
+}
+.container{
+  height:400px;
+  background-color:white;
+  width:900px;
+  margin:100px auto;
+margin-top:30px;
+  border-radius: 10px;
+
+
+}
+
+.container h3{
+  text-align:center;
+  padding-top: 10px;
+}
+.container div{
+  float:left;
+  font-family: 'Lato', sans-serif;
+}
+.container .p1{
+  width:25%;
+    text-align:center;
+}
+
+.container.game.top-row div{
+  width:33%;
+  border-right: 1px solid black;
+  height: 100%;
+}
+
+.game{
+width:45%;
+text-align:center;
+height:300px;
+border: 1px solid black;
+margin-top: 20px;
+border-radius: 5px;
+
+}
+
+.container .p2{
+  width:25%;
+  text-align:center;
+
+}
+
+.button{
+  width:200px;
+  height:50px;
+  margin: 0 auto;
+  margin-top :-100px;
+  color:#fff;
+  background: #A00C0C;
+  border-radius: 20px;
+  border:none;
+  font-size:18px;
+  padding:5px;
+}
+ .button:hover{
+  background: blue;
+}
 
