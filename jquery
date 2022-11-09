@@ -1,0 +1,185 @@
+var player="1";
+
+$(function() //ready function
+{
+
+  //player 2 faded
+  $(".p2").css({"opacity":".7","transform":"scale(.8,.8)"});
+  //box clicked
+  $(".game div div").click(function(){
+    //check if game over or not
+    if($(".container,.game div div").css("cursor")==="not-allowed")
+    {
+      alert("Game Over");
+    }
+    else{
+      //if there is no image
+      if($(this).children('img').length===0){
+        //if chance of player 1
+        if(player==1){
+          $(this).append("<img  class='o'src='p1.jpg' height='90px' width='100px'>");
+          player="2"; //change player
+          $(".p2").css({"opacity":"1","transform":"scale(1,1)"});
+          $(".p1").css({"opacity":".7","transform":"scale(.8,.8)"});
+
+          //to check if player 1 won
+          //all the possibilities to win p1
+          // from top-left
+          if($(".top-left, .top-center,.top-right").children(".o").length===3)
+            {
+                $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+
+              $(".container,.game div div").css("cursor","not-allowed");
+              $(".p1 h4").css("display","block");
+
+              }
+              else  if($(".top-left, .center-center,.bottom-right").children(".o").length===3)
+                {
+
+                    $(".container,.game div div").css("cursor","not-allowed");
+                      $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+                        $(".p1 h4").css("display","block");
+                  }
+                  else  if($(".top-left, .center-left,.bottom-left").children(".o").length===3)
+                  {
+
+                    $(".container,.game div div").css("cursor","not-allowed");
+                    $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+                      $(".p1 h4").css("display","block");
+                  }
+                    //from center-left
+                    else  if($(".center-left, .center-center,.center-right").children(".o").length===3)
+                    {
+
+                      $(".container,.game div div").css("cursor","not-allowed");
+                      $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+                        $(".p1 h4").css("display","block");
+                    }
+                  //from bottom-left
+                  else  if($(".bottom-left, .bottom-center,.bottom-right").children(".o").length===3)
+                  {
+
+                  $(".container,.game div div").css("cursor","not-allowed");
+                  $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+                    $(".p1 h4").css("display","block");
+
+                  }
+                else  if($(".bottom-left, .center-center,.top-right").children(".o").length===3)
+                {
+
+                  $(".container,.game div div").css("cursor","not-allowed");
+                  $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+                    $(".p1 h4").css("display","block");
+                }
+                //from top-center
+                else  if($(".top-center, .center-center,.bottom-center").children(".o").length===3)
+                {
+
+                  $(".container,.game div div").css("cursor","not-allowed");
+                  $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+                    $(".p1 h4").css("display","block");
+                }
+                //from top-right
+                else  if($(".top-right, .center-right,.bottom-right").children(".o").length===3)
+                {
+
+                  $(".container,.game div div").css("cursor","not-allowed");
+                  $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+                    $(".p1 h4").css("display","block");
+                }
+
+        }
+
+        //else chance of player 2
+        else{
+          $(this).append("<img class='x' src='p2.jpg' height='90px' width='100px'>");
+          player=1;//change player
+          $(".p2").css({"opacity":".7","transform":"scale(.8,.8)"});
+          $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+
+
+        //to check if player 2 won
+        //all the possibilities to win p2
+        //from-left
+        if($(".top-left, .top-center,.top-right").children(".x").length===3)
+      {
+        $(".p2").css({"opacity":"1","transform":"scale(1,1)"});
+          $(".p2 h4").css("display","block");
+        $(".container,.game div div").css("cursor","not-allowed");
+      }
+      else  if($(".top-left, .center-center,.bottom-right").children(".x").length===3)
+      {
+        $(".p2").css({"opacity":"1","transform":"scale(1,1)"});
+          $(".p2 h4").css("display","block");
+        $(".container,.game div div").css("cursor","not-allowed");
+      }
+      else  if($(".top-left, .center-left,.bottom-left").children(".x").length===3)
+      {
+        $(".p2").css({"opacity":"1","transform":"scale(1,1)"});
+          $(".p2 h4").css("display","block");
+        $(".container,.game div div").css("cursor","not-allowed");
+      }
+        //from center-left
+      else  if($(".center-left, .center-center,.center-right").children(".x").length===3)
+      {
+        $(".p2").css({"opacity":"1","transform":"scale(1,1)"});
+          $(".p2 h4").css("display","block");
+        $(".container,.game div div").css("cursor","not-allowed");
+      }
+      //from bottom-left
+      else  if($(".bottom-left, .bottom-center,.bottom-right").children(".x").length===3)
+      {
+        $(".p2").css({"opacity":"1","transform":"scale(1,1)"});
+          $(".p2 h4").css("display","block");
+        $(".container,.game div div").css("cursor","not-allowed");
+
+      }
+      else  if($(".bottom-left, .center-center,.top-right").children(".x").length===3)
+      {
+        $(".p2").css({"opacity":"1","transform":"scale(1,1)"});
+          $(".p2 h4").css("display","block");
+        $(".container,.game div div").css("cursor","not-allowed");
+      }
+      //from top-center
+      else  if($(".top-center, .center-center,.bottom-center").children(".x").length===3)
+      {
+        $(".p2").css({"opacity":"1","transform":"scale(1,1)"});
+          $(".p2 h4").css("display","block");
+        $(".container,.game div div").css("cursor","not-allowed");
+      }
+      //from top-right
+      else  if($(".top-right, .center-right,.bottom-right").children(".x").length===3)
+      {
+        $(".p2").css({"opacity":"1","transform":"scale(1,1)"});
+          $(".p2 h4").css("display","block");
+        $(".container,.game div div").css("cursor","not-allowed");
+      }
+    }
+  }
+  if($(".game div div").children("img").length===9){
+    $(".tie").css("display","block");
+  }
+}
+});
+
+});
+
+
+//restart function
+function restart(){
+  player=1;
+  $(".p2").css({"opacity":".7","transform":"scale(.8,.8)"});
+$(".tie").css("display","none");
+$(".container,.game div div").css("cursor","unset");
+  $(".game div div").children("img").remove();
+    $(".p2").css({"opacity":".7","transform":"scale(.8,.8)"});
+      $(".p1").css({"opacity":"1","transform":"scale(1,1)"});
+      $(".p1 h4").css("display","none");
+      $(".p2 h4").css("display","none");
+}
+
+// Restart button clicked
+$(".button").click(function(){
+
+  restart();
+});
